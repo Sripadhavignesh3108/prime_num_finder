@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h3 style="margin-bottom: 0px;font-family: arial;">ENTER A NUMBER</h3>
+            <h3 style="margin-bottom: 0px;font-family: arial;">TO CHECK </h3>
+            <h3 style="margin-bottom: 0px;font-family: arial;">GIVEN NUMBER IS PRIME OR NOT</h3>
+        </div>
+        <h2 style="margin: 0px;">ANSWER COMES HERE</h2>
+    <form >
+        <input type="number" placeholder="         Enter a Number" autofocus>
+        <input type="submit">
+    </form>
+</div>
+    <script>
+        let body=document.getElementsByTagName("body")[0];
+        body.style.height="99vh"
+        body.style.display="flex";
+        body.style.justifyContent="center";
+        body.style.alignItems="center";
+        body.style.backgroundColor="rgba(225, 255, 255)";
+
+        let title=document.getElementsByTagName("div")[1];
+        title.style.display="flex";
+        title.style.flexDirection="column";
+        title.style.justifyContent="center";
+        title.style.alignItems="center";
+        title.style.position="relative";
+        title.style.top="-40px";
+
+
+
+        let contain=document.getElementsByTagName("div")[0];
+        contain.style.border="1px solid";
+        contain.style.width="350px";
+        contain.style.height="480px";
+        contain.style.borderRadius="20px";
+        contain.style.display="flex";
+        contain.style.flexDirection="column";
+        contain.style.justifyContent="center";
+        contain.style.alignItems="center";
+        contain.style.gap="30px";
+        contain.style.boxShadow="0px 0px 20px 2px";
+        contain.style.backgroundColor="floralwhite"
+
+
+        let texta=document.getElementsByTagName("h2")[0];
+          texta.style.fontFamily="arial";
+        let inp=document.getElementsByTagName("input")[0];
+        let sub=document.getElementsByTagName("input")[1];
+        sub.addEventListener("click",(a)=>{
+            a.preventDefault()
+            let num=inp.value;
+            if(num>1){
+                c=0;
+                for(i=2;i<num;i++){
+                    if(num%i==0){
+                        c++;
+                        break;
+                    }
+                }
+            if(c==0){
+                texta.innerHTML=`${num} is a Prime Number !`;
+                texta.style.color="lightgreen";
+            }
+            else{
+                texta.innerHTML= `${num} is Not a Prime Number` ;
+                texta.style.color="red";
+            }
+        }
+        else{
+            texta.innerHTML="1 is Not Prime nor Composite"
+            
+        }
+        })
+    </script>
+</body>
+</html>
